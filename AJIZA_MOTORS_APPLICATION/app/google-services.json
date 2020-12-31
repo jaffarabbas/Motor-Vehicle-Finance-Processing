@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "322105425453",
+    "project_id": "ajizamotors",
+    "storage_bucket": "ajizamotors.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322105425453:android:35719287e06a9156d0c2a4",
+        "android_client_info": {
+          "package_name": "com.ajizamotors"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322105425453-99isbl317rblqnlkcdlgl5a1ol6rff6i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXjORIxl8OagvGAxuV_eOeCeIuzI0FbNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322105425453-99isbl317rblqnlkcdlgl5a1ol6rff6i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
