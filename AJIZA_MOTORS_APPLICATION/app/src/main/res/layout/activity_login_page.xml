@@ -45,17 +45,17 @@
 
     <Button
         android:id="@+id/LoginButton"
-        android:layout_width="188dp"
-        android:layout_height="57dp"
+        android:layout_width="147dp"
+        android:layout_height="56dp"
         android:layout_marginBottom="216dp"
         android:background="@drawable/buttonbackground1"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/Password"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/Password"
         app:layout_constraintTop_toBottomOf="@+id/Password"
-        app:layout_constraintVertical_bias="0.653" />
+        app:layout_constraintVertical_bias="0.566" />
 
     <ImageButton
         android:id="@+id/BackToMain"
@@ -78,9 +78,35 @@
         android:background="@color/cardview_shadow_end_color"
         android:text="New here"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/LoginButton"
-        app:layout_constraintStart_toStartOf="@+id/LoginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742" />
+        app:layout_constraintVertical_bias="0.728" />
+
+    <Button
+        android:id="@+id/GoogleLogin"
+        android:layout_width="89dp"
+        android:layout_height="55dp"
+        android:background="@drawable/buttonbackground1"
+        android:text="Google"
+        app:layout_constraintBottom_toTopOf="@+id/IntoRegistration"
+        app:layout_constraintEnd_toStartOf="@+id/LoginButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/Password"
+        app:layout_constraintVertical_bias="0.666" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="50dp"
+        android:layout_height="54dp"
+        app:layout_constraintBottom_toTopOf="@+id/IntoRegistration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Password"
+        app:layout_constraintVertical_bias="0.652"
+        app:srcCompat="@drawable/google" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

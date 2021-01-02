@@ -27,5 +27,12 @@ public class FirstPage extends AppCompatActivity {
                 startActivity(new Intent(FirstPage.this,LoginPage.class));
             }
         });
+        //into login Dealer
+        IntoDealer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(FirstPage.this,DealerLogin.class));
+            }
+        });
     }
 }

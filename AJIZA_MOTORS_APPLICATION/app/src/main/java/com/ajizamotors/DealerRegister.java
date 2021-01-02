@@ -26,33 +26,33 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class Regester extends AppCompatActivity {
-    ImageButton BackToRegistration;
-    Button GoogleSync,Register;
+public class DealerRegister extends AppCompatActivity {
+    EditText DealerRegisterUsername,DealerRegisterPassword;
+    Button DealerRegister,GoogleRegister;
+    ImageButton Back;
     GoogleSignInClient googleSignInClient;
-    EditText RegisterUsername,RegisterPass;
     FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_regester);
+        setContentView(R.layout.activity_dealer_register);
 
         //get ids
-        BackToRegistration = findViewById(R.id.BackToMainFromRegistration);
-        GoogleSync = findViewById(R.id.GoogleSignIn);
-        Register = findViewById(R.id.RegisterButton);
-        RegisterUsername = findViewById(R.id.RegisterUser);
-        RegisterPass = findViewById(R.id.RegisterPassword);
+        DealerRegisterUsername = findViewById(R.id.DealerRegesterUsername);
+        DealerRegisterPassword = findViewById(R.id.DealerUserPassword);
+        DealerRegister = findViewById(R.id.DealerRegesterButton);
+        GoogleRegister = findViewById(R.id.DealerRegisterGoogleAuth);
+        Back = findViewById(R.id.BackToDealerLogin);
         firebaseAuth = FirebaseAuth.getInstance();
 
         //Email Pass Register
-        this.Register.setOnClickListener(new View.OnClickListener() {
+        this.DealerRegister.setOnClickListener(new View.OnClickListener() {
             String email,password;
             @Override
             public void onClick(View v) {
-                 email = RegisterUsername.getText().toString();
-                 password = RegisterPass.getText().toString();
+                email = DealerRegisterUsername.getText().toString();
+                password = DealerRegisterPassword.getText().toString();
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -71,9 +71,9 @@ public class Regester extends AppCompatActivity {
 
         final GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken("322105425453-99isbl317rblqnlkcdlgl5a1ol6rff6i.apps.googleusercontent.com").requestEmail().build();
 
-        googleSignInClient = GoogleSignIn.getClient(Regester.this, googleSignInOptions);
+        googleSignInClient = GoogleSignIn.getClient(DealerRegister.this, googleSignInOptions);
 
-        GoogleSync.setOnClickListener(new View.OnClickListener() {
+        GoogleRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -85,14 +85,14 @@ public class Regester extends AppCompatActivity {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
         if (firebaseUser != null){
-            startActivity(new Intent(Regester.this, Dashboard.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            startActivity(new Intent(DealerRegister.this, Dashboard.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         }
 
 
-        BackToRegistration.setOnClickListener(new View.OnClickListener() {
+        Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Regester.this,LoginPage.class));
+                startActivity(new Intent(DealerRegister.this,LoginPage.class));
             }
         });
     }
@@ -120,7 +120,7 @@ public class Regester extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                startActivity(new Intent(Regester.this, Dashboard.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                                startActivity(new Intent(DealerRegister.this, Dashboard.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
                                 displayToast("Firebase authentication is successful");
                             }
                             else {
@@ -138,13 +138,13 @@ public class Regester extends AppCompatActivity {
 
     //Register from mail
     private void UserRegistration(String email,String password){
-        firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(Regester.this,new OnCompleteListener<AuthResult>(){
+        firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(DealerRegister.this,new OnCompleteListener<AuthResult>(){
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(Regester.this,"Register Successfully",Toast.LENGTH_LONG).show();
+                    Toast.makeText(DealerRegister.this,"Register Successfully",Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(Regester.this,"Register Failed",Toast.LENGTH_LONG).show();
+                    Toast.makeText(DealerRegister.this,"Register Failed",Toast.LENGTH_LONG).show();
                 }
             }
         });
