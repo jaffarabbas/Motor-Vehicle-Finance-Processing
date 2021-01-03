@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,8 +29,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class Regester extends AppCompatActivity {
     ImageButton BackToRegistration;
-    Button GoogleSync,Register;
-    GoogleSignInClient googleSignInClient;
+    Button Register;
     EditText RegisterUsername,RegisterPass;
     FirebaseAuth firebaseAuth;
 
@@ -40,7 +40,6 @@ public class Regester extends AppCompatActivity {
 
         //get ids
         BackToRegistration = findViewById(R.id.BackToMainFromRegistration);
-        GoogleSync = findViewById(R.id.GoogleSignIn);
         Register = findViewById(R.id.RegisterButton);
         RegisterUsername = findViewById(R.id.RegisterUser);
         RegisterPass = findViewById(R.id.RegisterPassword);
@@ -67,73 +66,6 @@ public class Regester extends AppCompatActivity {
                 }
             }
         });
-
-
-        final GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken("322105425453-99isbl317rblqnlkcdlgl5a1ol6rff6i.apps.googleusercontent.com").requestEmail().build();
-
-        googleSignInClient = GoogleSignIn.getClient(Regester.this, googleSignInOptions);
-
-        GoogleSync.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-                Intent intent = googleSignInClient.getSignInIntent();
-                startActivityForResult(intent, 9001);
-            }
-        });
-        firebaseAuth = FirebaseAuth.getInstance();
-        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-
-        if (firebaseUser != null){
-            startActivity(new Intent(Regester.this, Dashboard.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-        }
-
-
-        BackToRegistration.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Regester.this,LoginPage.class));
-            }
-        });
-    }
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == 9001){
-            Task<GoogleSignInAccount> signInAccountTask = GoogleSignIn.getSignedInAccountFromIntent(data);
-
-            if (signInAccountTask.isSuccessful()){
-                String s= "Google Sign in successful!";
-                displayToast(s);
-
-                try {
-                    GoogleSignInAccount googleSignInAccount = signInAccountTask.getResult(ApiException.class);
-
-                    AuthCredential authCredential = null;
-                    if (googleSignInAccount != null) {
-                        authCredential = GoogleAuthProvider.getCredential(googleSignInAccount.getIdToken(), null);
-                    }
-                    firebaseAuth.signInWithCredential(authCredential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
-                                startActivity(new Intent(Regester.this, Dashboard.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                                displayToast("Firebase authentication is successful");
-                            }
-                            else {
-                                displayToast("Authentication Failed : " + task.getException().getMessage());
-                            }
-                        }
-                    });
-                }
-                catch (ApiException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
     }
 
     //Register from mail

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class DealerLogin extends AppCompatActivity {
+    private final int RC_SIGN_IN = 0;
     EditText DealerRegisterUsername,DealerRegisterPassword;
     Button DealerGoogleLogin,DealerLogin,DealerRegistration;
     ImageButton Back;
@@ -45,6 +46,12 @@ public class DealerLogin extends AppCompatActivity {
                 }
             }
         });
+
+        //Google Sign in
+
+
+
+
         //Registration
         this.DealerRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +72,7 @@ public class DealerLogin extends AppCompatActivity {
     private void LoginUser(String name,String password) {
         LoginAuth.signInWithEmailAndPassword(name, password).addOnSuccessListener(DealerLogin.this, authResult -> {
             Toast.makeText(DealerLogin.this,"Login Successful",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(DealerLogin.this, DealerDashboard.class));
+            startActivity(new Intent(DealerLogin.this, Dashboard.class));
         });
     }
 }

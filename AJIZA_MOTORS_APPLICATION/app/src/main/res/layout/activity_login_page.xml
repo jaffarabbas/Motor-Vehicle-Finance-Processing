@@ -8,7 +8,7 @@
     tools:context=".LoginPage">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/CustomerUserImage"
         android:layout_width="315dp"
         android:layout_height="204dp"
         android:layout_marginTop="28dp"
@@ -26,9 +26,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Username"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintEnd_toEndOf="@+id/CustomerUserImage"
+        app:layout_constraintStart_toStartOf="@+id/CustomerUserImage"
+        app:layout_constraintTop_toBottomOf="@+id/CustomerUserImage" />
 
     <EditText
         android:id="@+id/Password"

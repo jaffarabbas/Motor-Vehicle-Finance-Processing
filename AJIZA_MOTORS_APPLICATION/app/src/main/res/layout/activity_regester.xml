@@ -18,31 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/regimg" />
 
-    <Button
-        android:id="@+id/GoogleSignIn"
-        android:layout_width="143dp"
-        android:layout_height="36dp"
-        android:background="@color/yellow"
-        android:text="GOOGLE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="46dp"
-        android:layout_height="36dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.21"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696"
-        app:srcCompat="@drawable/google" />
-
     <ImageButton
         android:id="@+id/BackToMainFromRegistration"
         android:layout_width="43dp"
