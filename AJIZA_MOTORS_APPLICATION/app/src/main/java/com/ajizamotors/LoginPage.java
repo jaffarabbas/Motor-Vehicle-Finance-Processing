@@ -2,6 +2,7 @@ package com.ajizamotors;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -24,11 +26,13 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginPage extends AppCompatActivity {
     private final int RC_SIGN_IN = 0;
     ImageButton BackToMain;
-    Button IntoRegistration,Login,CustomerGoogleLogin;
+    Button IntoRegistration,CustomerGoogleLogin;
+    SignInButton signInButton;
     EditText Username,Password;
     GoogleSignInClient googleSignInClient;
     FirebaseAuth LoginAuth;
 
+    @SuppressLint("CutPasteId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,12 +43,11 @@ public class LoginPage extends AppCompatActivity {
         IntoRegistration = findViewById(R.id.IntoRegistration);
         Username = findViewById(R.id.Username);
         Password = findViewById(R.id.Password);
-        Login = findViewById(R.id.LoginButton);
-        CustomerGoogleLogin = findViewById(R.id.GoogleLogin);
+        signInButton = findViewById(R.id.GoogleLogin);
         LoginAuth = FirebaseAuth.getInstance();
 
         //Login
-        Login.setOnClickListener(new View.OnClickListener() {
+        this.signInButton.setOnClickListener(new View.OnClickListener() {
             String user,pass;
             @Override
             public void onClick(View v) {
@@ -69,7 +72,7 @@ public class LoginPage extends AppCompatActivity {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        CustomerGoogleLogin.setOnClickListener(new View.OnClickListener() {
+        signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (v.getId()) {
