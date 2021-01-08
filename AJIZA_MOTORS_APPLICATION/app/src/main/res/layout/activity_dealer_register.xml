@@ -45,19 +45,6 @@
         app:layout_constraintTop_toBottomOf="@+id/DealerRegesterUsername" />
 
     <Button
-        android:id="@+id/DealerRegisterGoogleAuth"
-        android:layout_width="97dp"
-        android:layout_height="30dp"
-        android:background="@color/yellow"
-        android:text="GOOGLE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/DealerUserPassword"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/DealerUserPassword"
-        app:layout_constraintTop_toBottomOf="@+id/DealerRegesterButton"
-        app:layout_constraintVertical_bias="0.188" />
-
-    <Button
         android:id="@+id/DealerRegesterButton"
         android:layout_width="149dp"
         android:layout_height="46dp"
@@ -65,21 +52,7 @@
         android:background="@drawable/buttonbackground1"
         android:text="REGISTER"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/DealerRegisterGoogleAuth"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="@+id/DealerRegisterGoogleAuth" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="41dp"
-        android:layout_height="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/DealerRegisterGoogleAuth"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DealerRegesterButton"
-        app:layout_constraintVertical_bias="0.186"
-        app:srcCompat="@drawable/google" />
+        tools:layout_editor_absoluteX="142dp" />
 
     <ImageButton
         android:id="@+id/BackToDealerLogin"
