@@ -84,29 +84,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.728" />
 
-    <Button
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/GoogleLogin"
-        android:layout_width="89dp"
-        android:layout_height="55dp"
-        android:background="@drawable/buttonbackground1"
-        android:text="Google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/IntoRegistration"
         app:layout_constraintEnd_toStartOf="@+id/LoginButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/Password"
-        app:layout_constraintVertical_bias="0.666" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="50dp"
-        android:layout_height="54dp"
-        app:layout_constraintBottom_toTopOf="@+id/IntoRegistration"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Password"
-        app:layout_constraintVertical_bias="0.652"
-        app:srcCompat="@drawable/google" />
+        app:layout_constraintVertical_bias="0.688"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
