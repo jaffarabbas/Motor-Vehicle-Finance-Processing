@@ -10,25 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AJIZAMOTORS" >
         <activity
-            android:name=".DealerDashboardActivity"
-            android:label="@string/title_activity_dealer_dashboard"
-            android:theme="@style/Theme.AJIZAMOTORS.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".DealerDashboard"
-            android:label="@string/title_activity_dealer_dashboard"
-            android:theme="@style/Theme.AJIZAMOTORS.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".DealerDashbord"
-            android:label="@string/title_activity_dealer_dashbord"
-            android:theme="@style/Theme.AJIZAMOTORS.NoActionBar" >
-        </activity>
-        <activity
             android:name=".Dashboard"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/Theme.AJIZAMOTORS.NoActionBar" />
-        <activity android:name=".CreateAdd" />
+        <activity android:name=".CreateAdd">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".AdminDashboard" />
         <activity android:name=".AdminLogin" />
         <activity android:name=".DealerRegister" />
@@ -36,11 +27,7 @@
         <activity android:name=".Regester" />
         <activity android:name=".LoginPage" />
         <activity android:name=".FirstPage" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

@@ -14,4 +14,9 @@
     <string name="title_activity_dealer_dashbord">DealerDashbord</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_dealer_dashboard">DealerDashboard</string>
+
+
+
+<!--    Create Add-->
+    <string name="createAdd">Create Add</string>
 </resources>
