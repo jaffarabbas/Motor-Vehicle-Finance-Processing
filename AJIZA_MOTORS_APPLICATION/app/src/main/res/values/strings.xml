@@ -16,7 +16,6 @@
     <string name="title_activity_dealer_dashboard">DealerDashboard</string>
 
 
-
-<!--    Create Add-->
+    <!--    Create Add-->
     <string name="createAdd">Create Add</string>
 </resources>

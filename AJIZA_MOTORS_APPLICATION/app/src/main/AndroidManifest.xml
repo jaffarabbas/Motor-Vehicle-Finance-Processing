@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ajizamotors" >
+    package="com.ajizamotors">
 
     <application
         android:allowBackup="true"
@@ -8,17 +8,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AJIZAMOTORS" >
-        <activity
-            android:name=".Dashboard"
-            android:label="@string/title_activity_dashboard"
-            android:theme="@style/Theme.AJIZAMOTORS.NoActionBar" />
-        <activity android:name=".CreateAdd">
+        android:theme="@style/Theme.AJIZAMOTORS">
+        <activity android:name=".AdminAddReviewer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Dashboard"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/Theme.AJIZAMOTORS.NoActionBar" />
+        <activity android:name=".CreateAdd">
+
         </activity>
         <activity android:name=".AdminDashboard" />
         <activity android:name=".AdminLogin" />
@@ -26,9 +29,7 @@
         <activity android:name=".DealerLogin" />
         <activity android:name=".Regester" />
         <activity android:name=".LoginPage" />
-        <activity android:name=".FirstPage" >
-
-        </activity>
+        <activity android:name=".FirstPage" />
     </application>
 
 </manifest>
