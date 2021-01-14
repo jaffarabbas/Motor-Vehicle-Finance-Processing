@@ -52,7 +52,10 @@
         android:background="@drawable/buttonbackground1"
         android:text="REGISTER"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="142dp" />
+        app:layout_constraintEnd_toEndOf="@+id/DealerUserPassword"
+        app:layout_constraintStart_toStartOf="@+id/DealerUserPassword"
+        app:layout_constraintTop_toBottomOf="@+id/DealerUserPassword"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/BackToDealerLogin"
