@@ -119,13 +119,13 @@ public class CreateAdd extends AppCompatActivity {
                         Model model = new Model(uri.toString());
                         String ModelId = databaseReference.push().getKey();
                         databaseReference.child(ModelId).setValue(model);
-                        databaseReference.child(ModelId).child("carname").setValue(CarName);
-                        databaseReference.child(ModelId).child("carmodel").setValue(CarModel);
-                        databaseReference.child(ModelId).child("caraddress").setValue(CardAddress);
-                        databaseReference.child(ModelId).child("carpayment").setValue(CarPayment);
-                        databaseReference.child(ModelId).child("carprice").setValue(CarPrice);
-                        databaseReference.child(ModelId).child("sellername").setValue(SellerName);
-                        databaseReference.child(ModelId).child("sellercontact").setValue(SellerContact);
+                        databaseReference.child(ModelId).child("name").setValue(CarName);
+                        databaseReference.child(ModelId).child("model").setValue(CarModel);
+                        databaseReference.child(ModelId).child("address").setValue(CardAddress);
+                        databaseReference.child(ModelId).child("payment").setValue(CarPayment);
+                        databaseReference.child(ModelId).child("price").setValue(CarPrice);
+                        databaseReference.child(ModelId).child("sellerName").setValue(SellerName);
+                        databaseReference.child(ModelId).child("sellerContact").setValue(SellerContact);
                         ProgressBar(false);
                         displayToast("Upload Successfully");
                     }
