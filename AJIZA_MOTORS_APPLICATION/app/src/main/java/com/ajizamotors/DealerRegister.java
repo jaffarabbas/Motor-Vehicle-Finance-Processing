@@ -29,7 +29,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class DealerRegister extends AppCompatActivity {
     EditText DealerRegisterUsername,DealerRegisterPassword;
     Button DealerRegister;
-    ImageButton Back;
+    ImageButton BackBtn;
     FirebaseAuth firebaseAuth;
 
     @Override
@@ -41,7 +41,7 @@ public class DealerRegister extends AppCompatActivity {
         DealerRegisterUsername = findViewById(R.id.DealerRegesterUsername);
         DealerRegisterPassword = findViewById(R.id.DealerUserPassword);
         DealerRegister = findViewById(R.id.DealerRegesterButton);
-        Back = findViewById(R.id.BackToDealerLogin);
+        BackBtn = findViewById(R.id.BackToDealerLogin);
         firebaseAuth = FirebaseAuth.getInstance();
 
         //Email Pass Register
@@ -63,6 +63,14 @@ public class DealerRegister extends AppCompatActivity {
                 }else{
                     UserRegistration(email,password);
                 }
+            }
+        });
+
+        //back yo login
+        BackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DealerRegister.this,DealerLogin.class));
             }
         });
     }
