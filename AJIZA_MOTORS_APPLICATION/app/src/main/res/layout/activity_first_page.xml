@@ -18,17 +18,6 @@
         app:layout_constraintTop_toBottomOf="@+id/intoadmin"
         app:srcCompat="@drawable/bgimage" />
 
-    <Button
-        android:id="@+id/intoadmin"
-        android:layout_width="49dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/buttonbackground1"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/intocustomer"
@@ -52,5 +41,20 @@
         app:layout_constraintStart_toStartOf="@+id/intocustomer"
         app:layout_constraintTop_toBottomOf="@+id/intocustomer"
         app:layout_constraintVertical_bias="0.356" />
+
+    <ImageButton
+        android:id="@+id/intoadmin"
+        android:layout_width="72dp"
+        android:layout_height="64dp"
+        android:background="@drawable/admin_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/admin_button"
+        tools:ignore="VectorDrawableCompat" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
