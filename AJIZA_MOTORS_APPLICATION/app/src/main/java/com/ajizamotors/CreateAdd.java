@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
@@ -17,7 +16,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -44,17 +42,17 @@ public class CreateAdd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_add);
         //get Ids
-        UploadMainName = findViewById(R.id.UploadName);
-        UploadMainModel = findViewById(R.id.UploadCarModel);
+        UploadMainName = findViewById(R.id.AdminName);
+        UploadMainModel = findViewById(R.id.AdminEmail);
         UploadMainAddress = findViewById(R.id.UploadAddress);
         UploadPaymentMainGroup = findViewById(R.id.UploadPaymentGroup);
         UploadPaymentMainGroup = findViewById(R.id.UploadPaymentGroup);
         UploadMainPrice = findViewById(R.id.UploadPrice);
         UploadMainSellerName = findViewById(R.id.UploadSellerName);
         UploadMainSellerContact = findViewById(R.id.UploadSellerContact);
-        UploadMainAdd = findViewById(R.id.UploadAdd);
-        UploadedImage = findViewById(R.id.UplaodAddImage);
-        waiter = findViewById(R.id.WaitToUpload);
+        UploadMainAdd = findViewById(R.id.RegisterAdmin);
+        UploadedImage = findViewById(R.id.AdminAddImage);
+        waiter = findViewById(R.id.WaitToUploadAdmin);
 
         //Progressbar calling
         ProgressBar(false);
