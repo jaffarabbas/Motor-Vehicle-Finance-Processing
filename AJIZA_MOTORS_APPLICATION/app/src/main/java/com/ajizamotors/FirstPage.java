@@ -7,10 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class FirstPage extends AppCompatActivity {
-    Button IntoCustomer,IntoDealer,IntoAdmin;
+    Button IntoCustomer,IntoDealer;
+    ImageButton IntoAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,13 @@ public class FirstPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(FirstPage.this,DealerLogin.class));
+            }
+        });
+        //into Admin
+        IntoAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(FirstPage.this,AdminLogin.class));
             }
         });
     }
