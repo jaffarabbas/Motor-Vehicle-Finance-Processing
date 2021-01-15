@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ajizamotors" >
+    package="com.ajizamotors"
+    >
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -9,29 +11,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AJIZAMOTORS" >
-        <activity
-            android:name=".DealerDashboard"
-            android:label="@string/title_activity_dealer_dashboard"
-            android:theme="@style/Theme.AJIZAMOTORS.NoActionBar" >
-        </activity>
         <activity android:name=".AdminRegister" />
-        <activity android:name=".AdminAddReviewer" />
+        <activity android:name=".AdminAddReviewer" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Dashboard"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/Theme.AJIZAMOTORS.NoActionBar" />
-        <activity android:name=".CreateAdd" />
+        <activity android:name=".CreateAdd" >
+
+        </activity>
         <activity android:name=".AdminLogin" />
         <activity android:name=".DealerRegister" />
         <activity android:name=".DealerLogin" />
         <activity android:name=".Regester" />
         <activity android:name=".LoginPage" />
         <activity android:name=".FirstPage" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
