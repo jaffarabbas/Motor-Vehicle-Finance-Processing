@@ -56,9 +56,6 @@ public class DealerLogin extends AppCompatActivity {
                 }
             }
         });
-
-        //Google Sign in
-
         //Google Sign in
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -112,8 +109,8 @@ public class DealerLogin extends AppCompatActivity {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
             // Signed in successfully, show authenticated UI.
-            startActivity(new Intent(DealerLogin.this, Dashboard.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-            displayToast("Login IN");
+            startActivity(new Intent(DealerLogin.this, DealerDashboard.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            displayToast("Login Successful");
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
@@ -130,7 +127,7 @@ public class DealerLogin extends AppCompatActivity {
     private void LoginUser(String name,String password) {
         LoginAuth.signInWithEmailAndPassword(name, password).addOnSuccessListener(DealerLogin.this, authResult -> {
             Toast.makeText(DealerLogin.this,"Login Successful",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(DealerLogin.this, Dashboard.class));
+            startActivity(new Intent(DealerLogin.this, DealerDashboard.class));
         });
     }
 
