@@ -1,5 +1,6 @@
 package com.ajizamotors;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -38,13 +40,13 @@ public class Dashboard extends AppCompatActivity {
     ImageView CustomerUserMainImage;
     TextView CustomerMainUsername,CustomerMainEmail;
     GoogleSignInClient googleSignInClient;
-
+    Button Logout;
     FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-
+//
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
@@ -53,26 +55,26 @@ public class Dashboard extends AppCompatActivity {
         CustomerUserMainImage = findViewById(R.id.CustomerUserImage);
         CustomerMainUsername =(TextView) findViewById(R.id.CustomerUsername);
         CustomerMainEmail = (TextView) findViewById(R.id.CustomerEmail);
-
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
-                .setDrawerLayout(drawer)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
-
-        View headerView = navigationView.getHeaderView(0);
-        TextView navUsername = (TextView) headerView.findViewById(R.id.CustomerUsername);
-        TextView navEmail = (TextView) headerView.findViewById(R.id.CustomerEmail);
-        ImageView navImage = (ImageView) headerView.findViewById(R.id.CustomerUserImage);
+        Logout = findViewById(R.id.CustomerLogOut);
+//
+//
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+//        NavigationView navigationView = findViewById(R.id.nav_view);
+//        // Passing each menu ID as a set of Ids because each
+//        // menu should be considered as top level destinations.
+//        mAppBarConfiguration = new AppBarConfiguration.Builder(
+//                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+//                .setDrawerLayout(drawer)
+//                .build();
+//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+//        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+//        NavigationUI.setupWithNavController(navigationView, navController);
+//
+//        TextView navUsername = (TextView) headerView.findViewById(R.id.CustomerUsername);
+//        TextView navEmail = (TextView) headerView.findViewById(R.id.CustomerEmail);
+//        ImageView navImage = (ImageView) headerView.findViewById(R.id.CustomerUserImage);
         //Current user work
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         if (acct != null) {
@@ -80,45 +82,74 @@ public class Dashboard extends AppCompatActivity {
             String personEmail = acct.getEmail();
             Uri personPhoto = acct.getPhotoUrl();
 
-            navUsername.setText(personName);
-            navEmail.setText(personEmail);
-            Glide.with(this).load(String.valueOf(personPhoto)).into(navImage);
+            CustomerMainUsername.setText(personName);
+            CustomerMainEmail.setText(personEmail);
+            Glide.with(this).load(String.valueOf(personPhoto)).into(CustomerUserMainImage);
         }
+
+        //logout
+//        Logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //dialog box implementation
+//                BackPress(v);
+//            }
+//        });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.dashboard, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.dashboard, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onSupportNavigateUp() {
+//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+//        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+//                || super.onSupportNavigateUp();
+//    }
+//
+//    //menu item
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem menu){
+//        if(menu.getItemId() == R.id.action_Logout){
+//            signOut();
+//        }else{
+//            return super.onOptionsItemSelected(menu);
+//        }
+//        return true;
+//    }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
+    public void BackPress(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Do you want to Log out")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        signOut();
+                        finish();
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
-
-    //menu item
-    @Override
-    public boolean onOptionsItemSelected(MenuItem menu){
-        if(menu.getItemId() == R.id.action_Logout){
-            signOut();
-        }else{
-            return super.onOptionsItemSelected(menu);
-        }
-        return true;
-    }
-
+//
     //Sign out
     private void signOut() {
         googleSignInClient.signOut().addOnCompleteListener(this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        startActivity(new Intent(Dashboard.this,FirstPage.class));
-                        finish();
-                    }
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                startActivity(new Intent(Dashboard.this,FirstPage.class));
+                finish();
+            }
         });
     }
 }
