@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.AJIZAMOTORS" parent="Theme.AppCompat.NoActionBar">
+    <style name="Theme.AJIZAMOTORS" parent="Theme.AppCompat">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/yellow</item>
         <item name="colorPrimaryVariant">@color/yellow</item>
@@ -26,4 +26,6 @@
     <style name="Theme.AJIZAMOTORS.CornerSize">
         <item name="cornerSize">50%</item>
     </style>
+
+
 </resources>
