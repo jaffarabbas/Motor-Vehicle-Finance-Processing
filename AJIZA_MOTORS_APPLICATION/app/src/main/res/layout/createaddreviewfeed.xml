@@ -69,14 +69,17 @@
             android:orientation="horizontal"
             android:layout_marginLeft="50dp"
             >
+
             <TextView
                 android:id="@+id/Texthead1"
                 android:layout_width="44dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
                 android:layout_weight="1"
-                android:text="Price : "
+                android:text="$ : "
                 android:textSize="30sp" />
+
             <TextView
                 android:id="@+id/FeedCarPrice"
                 android:layout_width="wrap_content"
@@ -89,38 +92,65 @@
 
         </LinearLayout>
 
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:orientation="vertical">
-          <TextView
-              android:id="@+id/FeedCarSellerName"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginTop="10dp"
-              android:layout_weight="1"
-              android:layout_marginLeft="20dp"
-              android:text="TextView"
-              android:textSize="20sp" />
-          <TextView
-              android:id="@+id/FeedCarSellerContact"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginTop="7dp"
-              android:layout_marginLeft="20dp"
-              android:layout_weight="1"
-              android:text="TextView"
-              android:textSize="20sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="276dp"
+            android:orientation="vertical">
 
-          <Button
-              android:id="@+id/ApproveFromAdmin"
-              android:layout_width="278dp"
-              android:layout_height="38dp"
-              android:layout_gravity="center"
-              android:layout_marginTop="20dp"
-              android:layout_weight="1"
-              android:background="@color/yellow"
-              android:text="Approve" />
-      </LinearLayout>
+            <TextView
+                android:id="@+id/FeedCarSellerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/FeedCarSellerContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="7dp"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textSize="20sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/EditAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_baseline_edit_24"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <ImageView
+                    android:id="@+id/DeleteAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_baseline_delete_forever_24"
+                    tools:ignore="VectorDrawableCompat" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/ApproveFromAdmin"
+                android:layout_width="278dp"
+                android:layout_height="5dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:background="@color/yellow"
+                android:text="Approve" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
