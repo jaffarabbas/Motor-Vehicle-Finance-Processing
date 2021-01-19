@@ -2,12 +2,12 @@ package com.ajizamotors;
 
 public
 class Load{
-    String name,model,address,payment,price,sellerName,sellerContact,imageUrl;
+    String name,CarModel,address,payment,price,sellerName,sellerContact,imageUrl;
     public Load(){}
 
-    public Load(String name, String model, String address, String payment, String price, String sellerName, String sellerContact, String imageUrl) {
+    public Load(String name, String CarModel, String address, String payment, String price, String sellerName, String sellerContact, String imageUrl) {
         this.name = name;
-        this.model = model;
+        this.CarModel = CarModel;
         this.address = address;
         this.payment = payment;
         this.price = price;
@@ -24,12 +24,12 @@ class Load{
         this.name = name;
     }
 
-    public String getModel() {
-        return model;
+    public String getCarModel() {
+        return CarModel;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setCarModel(String CarModel) {
+        this.CarModel = CarModel;
     }
 
     public String getAddress() {
