@@ -66,6 +66,14 @@ public class Regester extends AppCompatActivity {
                 }
             }
         });
+
+        //back
+        BackToRegistration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Regester.this,LoginPage.class));
+            }
+        });
     }
 
     //Register from mail
