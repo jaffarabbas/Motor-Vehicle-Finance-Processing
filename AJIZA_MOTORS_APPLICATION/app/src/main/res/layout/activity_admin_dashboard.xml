@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/adminbg"
-    tools:context=".Dashboard">
+    tools:context=".AdminDashboard">
 
     <ScrollView
-        android:id="@+id/scrollView3"
+        android:id="@+id/scrollView2"
         android:layout_width="419dp"
         android:foregroundGravity="center"
         android:layout_height="490dp"
@@ -38,6 +38,7 @@
                     android:layout_height="147dp"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/dashboardcardbackground"
+                    android:id="@+id/ReviewAdd"
                     android:orientation="vertical">
 
                     <TextView
@@ -171,14 +172,13 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
         android:text="DASHBOARD"
         android:textColor="@color/white"
         android:textSize="27dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -187,22 +187,24 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AJIZA USER"
+        android:text="ADMIN"
         android:textColor="@color/black"
-        android:textSize="45dp"
+        android:textSize="50dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintVertical_bias="0.049" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/CustomerUserImage"
+        android:id="@+id/admin_profile_image"
         android:layout_width="152dp"
         android:layout_height="122dp"
         android:src="@drawable/admin_pic"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.938"
@@ -212,7 +214,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/CustomerUsername"
+        android:id="@+id/AdminProfileUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -220,35 +222,36 @@
         android:textColor="@color/black"
         android:textSize="30dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/CustomerEmail"
+        android:id="@+id/AdminProfileUserEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="176dp"
-        android:layout_marginRight="176dp"
         android:layout_marginBottom="44dp"
-        android:text=""
+        android:text="gamaportal8@gmail.com"
         android:textColor="@color/black"
         android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.181"
+        app:layout_constraintVertical_bias="0.194"
         tools:ignore="UnknownId" />
 
     <Button
-        android:id="@+id/CustomerLogOut"
+        android:id="@+id/AdminLogout"
         android:layout_width="wrap_content"
-        android:onClick="BackPress"
         android:layout_height="wrap_content"
         android:text="logout"
+        android:onClick="BackPress"
         android:background="@drawable/buttonbackground1"
         android:textStyle="bold"
         android:textColor="@color/black"
@@ -258,5 +261,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.01" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

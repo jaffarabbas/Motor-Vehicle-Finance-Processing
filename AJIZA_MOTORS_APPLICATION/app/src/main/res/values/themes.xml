@@ -22,4 +22,8 @@
     <style name="Theme.AJIZAMOTORS.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.AJIZAMOTORS.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.AJIZAMOTORS.CornerSize">
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

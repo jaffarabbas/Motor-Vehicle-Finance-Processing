@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/adminbg"
-    tools:context=".Dashboard">
+    tools:context=".DealerDashboard">
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -38,7 +38,9 @@
                     android:layout_height="147dp"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/dashboardcardbackground"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:id="@+id/CreateAdd"
+                    >
 
                     <TextView
                         android:id="@+id/textView3"
@@ -47,7 +49,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:layout_weight="1"
-                        android:text="REVIEW ADD"
+                        android:text="CREATE ADD"
                         android:textColor="@color/black"
                         android:textSize="24dp"
                         android:textStyle="bold" />
@@ -69,7 +71,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
                     android:background="@drawable/dashboardcardbackground"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:id="@+id/ShowResponses"
+                    >
 
                     <TextView
                         android:id="@+id/textView4"
@@ -78,7 +82,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:layout_weight="1"
-                        android:text="CUSTOMER"
+                        android:text="RESPONCE"
                         android:textColor="@color/black"
                         android:textSize="24dp"
                         android:textStyle="bold" />
@@ -91,6 +95,24 @@
                         android:layout_marginBottom="10dp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/d1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/DealerEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="180dp"
+                            android:layout_marginRight="180dp"
+                            android:layout_marginBottom="44dp"
+                            android:text="fa19bsse0008@maju.edu.pk"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"
+                            tools:ignore="UnknownId" />
+                    </LinearLayout>
 
                 </LinearLayout>
             </LinearLayout>
@@ -107,7 +129,9 @@
                     android:layout_height="146dp"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/dashboardcardbackground"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:id="@+id/AddApproved"
+                    >
 
                     <TextView
                         android:id="@+id/textView5"
@@ -116,7 +140,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:layout_weight="1"
-                        android:text="DEALER"
+                        android:text="APPROVED"
                         android:textColor="@color/black"
                         android:textSize="24dp"
                         android:textStyle="bold" />
@@ -129,8 +153,6 @@
                         android:layout_marginBottom="10dp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/r2" />
-
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -138,7 +160,9 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
                     android:background="@drawable/dashboardcardbackground"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:id="@+id/ShowFinance"
+                    >
 
                     <TextView
                         android:id="@+id/textView6"
@@ -185,9 +209,9 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AJIZA USER"
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+        android:text="AJIZA DEALER"
         android:textColor="@color/black"
         android:textSize="45dp"
         android:textStyle="bold"
@@ -199,20 +223,20 @@
         app:layout_constraintVertical_bias="0.01" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/CustomerUserImage"
-        android:layout_width="152dp"
-        android:layout_height="122dp"
+        android:id="@+id/DealerUserImage"
+        android:layout_width="102dp"
+        android:layout_height="78dp"
         android:src="@drawable/admin_pic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.121"
+        app:layout_constraintVertical_bias="0.208"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/CustomerUsername"
+        android:id="@+id/DealerUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -225,38 +249,21 @@
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <TextView
-        android:id="@+id/CustomerEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="176dp"
-        android:layout_marginRight="176dp"
-        android:layout_marginBottom="44dp"
-        android:text=""
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.181"
-        tools:ignore="UnknownId" />
-
     <Button
-        android:id="@+id/CustomerLogOut"
-        android:layout_width="wrap_content"
+        android:id="@+id/DealerLogout"
+        android:layout_width="73dp"
         android:onClick="BackPress"
-        android:layout_height="wrap_content"
-        android:text="logout"
+        android:layout_height="30dp"
         android:background="@drawable/buttonbackground1"
-        android:textStyle="bold"
+        android:text="Logout"
         android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintVertical_bias="0.022" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
