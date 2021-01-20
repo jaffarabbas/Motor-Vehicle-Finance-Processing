@@ -11,15 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AJIZAMOTORS.NoActionBar">
+        <activity android:name=".CustomerAddReview"></activity>
         <activity android:name=".SplashScreen">
 
         </activity>
         <activity android:name=".DealerDashboard" />
-        <activity android:name=".AdminDashboard">
-
-        </activity>
+        <activity android:name=".AdminDashboard"></activity>
         <activity android:name=".AdminRegister" />
-        <activity android:name=".AdminAddReviewer"
+        <activity
+            android:name=".AdminAddReviewer"
             android:theme="@style/Theme.AJIZAMOTORS">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,17 +31,13 @@
             android:name=".Dashboard"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/Theme.AJIZAMOTORS.NoActionBar" />
-        <activity android:name=".CreateAdd" />
-        <activity android:name=".AdminLogin" >
-
-        </activity>
+        <activity android:name=".CreateAdd"></activity>
+        <activity android:name=".AdminLogin"></activity>
         <activity android:name=".DealerRegister" />
         <activity android:name=".DealerLogin" />
         <activity android:name=".Regester" />
         <activity android:name=".LoginPage" />
-        <activity android:name=".FirstPage">
-
-        </activity>
+        <activity android:name=".FirstPage"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
