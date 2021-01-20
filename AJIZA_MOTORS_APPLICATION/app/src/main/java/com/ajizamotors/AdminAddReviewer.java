@@ -4,8 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +29,8 @@ public class AdminAddReviewer extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase =  FirebaseDatabase.getInstance();;
     DatabaseReference databaseReference;
     AdminReviewAddViewHolder adapter;
+    public SwipeRefreshLayout swipeRefreshLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +41,8 @@ public class AdminAddReviewer extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         databaseReference = firebaseDatabase.getReference().child("CreateAdd");
         loadData();
+        //Refresh Feed Every Seconds
+        FeedRefresher();
     }
 
 
@@ -86,4 +94,22 @@ public class AdminAddReviewer extends AppCompatActivity {
         adapter.startListening();
         recyclerView.setAdapter(adapter);
     }
+
+    //refresh page
+    public void FeedRefresher(){
+        adapter.notifyDataSetChanged();
+        refresh(1000);
+    }
+
+    private void refresh(int MilliSeconds) {
+        final Handler handler = new Handler();
+        final Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                FeedRefresher();
+            }
+        };
+        handler.postDelayed(runnable,MilliSeconds);
+    }
+
 }
