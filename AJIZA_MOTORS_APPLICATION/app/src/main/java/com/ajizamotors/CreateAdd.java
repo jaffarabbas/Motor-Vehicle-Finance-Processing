@@ -120,7 +120,7 @@ public class CreateAdd extends AppCompatActivity {
                         String ModelId = databaseReference.push().getKey();
                         databaseReference.child(ModelId).setValue(model);
                         databaseReference.child(ModelId).child("name").setValue(CarName);
-                        databaseReference.child(ModelId).child("model").setValue(CarModel);
+                        databaseReference.child(ModelId).child("CarModel").setValue(CarModel);
                         databaseReference.child(ModelId).child("address").setValue(CardAddress);
                         databaseReference.child(ModelId).child("payment").setValue(CarPayment);
                         databaseReference.child(ModelId).child("price").setValue(CarPrice);
