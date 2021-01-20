@@ -29,7 +29,6 @@ public class AdminAddReviewer extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase =  FirebaseDatabase.getInstance();;
     DatabaseReference databaseReference;
     AdminReviewAddViewHolder adapter;
-    public SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
