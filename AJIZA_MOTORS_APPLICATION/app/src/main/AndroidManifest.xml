@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AJIZAMOTORS.NoActionBar">
-        <activity android:name=".FinanceTotalForAdmin"></activity>
+        <activity android:name=".FinanceTotalForAdmin">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".CompleteOrders"
             android:theme="@style/Theme.AJIZAMOTORS"></activity>
@@ -24,11 +30,7 @@
         <activity android:name=".SplashScreen" />
         <activity android:name=".DealerDashboard" />
         <activity android:name=".AdminDashboard">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".AdminRegister" />
         <activity
