@@ -75,6 +75,7 @@ public class AdminDashboard extends AppCompatActivity {
         this.Finance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(AdminDashboard.this,FinanceTotalForAdmin.class));
                 displayToast("Finance");
             }
         });
