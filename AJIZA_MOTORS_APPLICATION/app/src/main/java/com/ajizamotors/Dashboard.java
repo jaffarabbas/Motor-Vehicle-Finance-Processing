@@ -9,7 +9,9 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -41,6 +43,7 @@ public class Dashboard extends AppCompatActivity {
     TextView CustomerMainUsername,CustomerMainEmail;
     GoogleSignInClient googleSignInClient;
     Button Logout;
+    LinearLayout AddView,CartCard;
     FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,9 @@ public class Dashboard extends AppCompatActivity {
         CustomerMainUsername =(TextView) findViewById(R.id.CustomerUsername);
         CustomerMainEmail = (TextView) findViewById(R.id.CustomerEmail);
         Logout = findViewById(R.id.CustomerLogOut);
+
+        CartCard = findViewById(R.id.Cart);
+        AddView = findViewById(R.id.viewAdd);
 //
 //
 //        Toolbar toolbar = findViewById(R.id.toolbar);
@@ -86,6 +92,24 @@ public class Dashboard extends AppCompatActivity {
             CustomerMainEmail.setText(personEmail);
             Glide.with(this).load(String.valueOf(personPhoto)).into(CustomerUserMainImage);
         }
+
+        //Add view
+        AddView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this,CustomerAddReview.class));
+                displayToast("Add Page");
+            }
+        });
+
+        //Cart
+        CartCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Dashboard.this,CustomerCart.class));
+                displayToast("Cart Page");
+            }
+        });
 
         //logout
 //        Logout.setOnClickListener(new View.OnClickListener() {
@@ -151,5 +175,9 @@ public class Dashboard extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void displayToast(String s) {
+        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
     }
 }
