@@ -28,7 +28,7 @@ public class AdminDashboard extends AppCompatActivity {
     TextView AdminProfileName,AdminProfileEmail;
     ImageView AdminProfileImage;
     Button AdminLogOut;
-    LinearLayout AddReview;
+    LinearLayout AddReview,CompleteOrders,Orders,Finance;
     public String Username,Email,AdminProfilePhoto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,10 @@ public class AdminDashboard extends AppCompatActivity {
         AdminLogOut = findViewById(R.id.AdminLogout);
         //pages ids
         AddReview = findViewById(R.id.ReviewAdd);
+        Orders = findViewById(R.id.OrderView);
+        CompleteOrders = findViewById(R.id.CompleteOrdersViewFromAdmin);
+        Finance = findViewById(R.id.FinanceView);
+
         //Admin Profile
         AdminProfile();
 
@@ -50,6 +54,28 @@ public class AdminDashboard extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(AdminDashboard.this,AdminAddReviewer.class));
                 displayToast("Add Review");
+            }
+        });
+        //Orders view
+        this.Orders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayToast("Orders");
+            }
+        });
+        //Complete Orders
+        this.CompleteOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminDashboard.this, com.ajizamotors.CompleteOrders.class));
+                displayToast("Completed Orders");
+            }
+        });
+        //Finance
+        this.Finance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayToast("Finance");
             }
         });
     }
