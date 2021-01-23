@@ -38,6 +38,7 @@
                     android:layout_height="147dp"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/dashboardcardbackground"
+                    android:id="@+id/viewAdd"
                     android:orientation="vertical">
 
                     <TextView
@@ -47,7 +48,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:layout_weight="1"
-                        android:text="REVIEW ADD"
+                        android:text="NEW ADDS"
                         android:textColor="@color/black"
                         android:textSize="24dp"
                         android:textStyle="bold" />
@@ -65,11 +66,13 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="159dp"
+                    android:layout_width="163dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
                     android:background="@drawable/dashboardcardbackground"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:id="@+id/Cart"
+                    >
 
                     <TextView
                         android:id="@+id/textView4"
@@ -78,19 +81,19 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:layout_weight="1"
-                        android:text="CUSTOMER"
+                        android:text="CART"
                         android:textColor="@color/black"
                         android:textSize="24dp"
                         android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/imageView5"
-                        android:layout_width="123dp"
-                        android:layout_height="89dp"
+                        android:layout_width="163dp"
+                        android:layout_height="92dp"
                         android:layout_gravity="end"
                         android:layout_marginBottom="10dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/d1" />
+                        app:srcCompat="@drawable/cart2" />
 
                 </LinearLayout>
             </LinearLayout>
