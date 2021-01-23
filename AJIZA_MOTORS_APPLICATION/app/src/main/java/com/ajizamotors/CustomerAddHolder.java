@@ -43,7 +43,7 @@ import java.util.Map;
 import static android.content.Context.MODE_PRIVATE;
 
 public class CustomerAddHolder extends FirebaseRecyclerAdapter<CustomerAdd, CustomerAddHolder.viewHolder> {
-
+    public String countTotal;
     public CustomerAddHolder(@NonNull FirebaseRecyclerOptions<CustomerAdd> options) {
         super(options);
     }
@@ -69,6 +69,18 @@ public class CustomerAddHolder extends FirebaseRecyclerAdapter<CustomerAdd, Cust
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        DatabaseReference databaseReferenceForCountOrder = FirebaseDatabase.getInstance().getReference().child("Cart");
+                        databaseReferenceForCountOrder.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                countTotal = String.valueOf(snapshot.getChildrenCount());
+                                System.out.println(snapshot.getChildrenCount());
+                            }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Cart");
                         String ModelId = databaseReference.push().getKey();
                         databaseReference.child(ModelId).child("imageUrl").setValue(model.getImageUrl());
@@ -80,6 +92,7 @@ public class CustomerAddHolder extends FirebaseRecyclerAdapter<CustomerAdd, Cust
                         databaseReference.child(ModelId).child("sellerName").setValue(model.getSellerName());
                         databaseReference.child(ModelId).child("sellerContact").setValue(model.getSellerContact());
                         databaseReference.child(ModelId).child("AjizaComition").setValue(String.valueOf(FinanceOfCar(Double.parseDouble(model.getPrice()))));
+                        databaseReference.child(ModelId).child("OrderCount").setValue(countTotal);
 
                         boolean flag = true;
                         if(flag){
