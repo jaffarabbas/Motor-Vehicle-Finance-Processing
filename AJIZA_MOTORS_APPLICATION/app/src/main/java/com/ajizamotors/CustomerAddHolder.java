@@ -73,7 +73,8 @@ public class CustomerAddHolder extends FirebaseRecyclerAdapter<CustomerAdd, Cust
                         databaseReferenceForCountOrder.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                countTotal = String.valueOf(snapshot.getChildrenCount());
+                                long value =  snapshot.getChildrenCount();
+                                countTotal = String.valueOf(value);
                                 System.out.println(snapshot.getChildrenCount());
                             }
                             @Override
