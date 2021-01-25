@@ -11,31 +11,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AJIZAMOTORS.NoActionBar">
-        <activity android:name=".FinanceTotalForAdmin">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".DealerFinance">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity android:name=".DealerApprovedAddShow"
+            android:theme="@style/Theme.AJIZAMOTORS"
+            >
+
+        </activity>
+        <activity android:name=".FinanceTotalForAdmin">
+
         </activity>
         <activity
             android:name=".CompleteOrders"
-            android:theme="@style/Theme.AJIZAMOTORS"></activity>
+            android:theme="@style/Theme.AJIZAMOTORS" />
         <activity
             android:name=".CustomerCart"
             android:theme="@style/Theme.AJIZAMOTORS" />
         <activity
             android:name=".CustomerAddReview"
             android:theme="@style/Theme.AJIZAMOTORS" />
-        <activity android:name=".SplashScreen" />
-        <activity android:name=".DealerDashboard" />
-        <activity android:name=".AdminDashboard">
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DealerDashboard">
 
         </activity>
+        <activity android:name=".AdminDashboard" />
         <activity android:name=".AdminRegister" />
         <activity
             android:name=".AdminAddReviewer"
-            android:theme="@style/Theme.AJIZAMOTORS" />
+            android:theme="@style/Theme.AJIZAMOTORS" >
+
+        </activity>
         <activity
             android:name=".Dashboard"
             android:label="@string/title_activity_dashboard"
@@ -46,7 +58,7 @@
         <activity android:name=".DealerLogin" />
         <activity android:name=".Regester" />
         <activity android:name=".LoginPage" />
-        <activity android:name=".FirstPage"></activity>
+        <activity android:name=".FirstPage" />
 
         <meta-data
             android:name="preloaded_fonts"
