@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -29,7 +30,7 @@ public class DealerDashboard extends AppCompatActivity {
     ImageView DealerUserMainImage;
     TextView DealerMainUsername, DealerMainEmail;
     GoogleSignInClient googleSignInClient;
-    LinearLayout CreateAddInApp;
+    LinearLayout CreateAddInApp,ApprovedAdds,FinanceForAdd;
     Button Logout;
 
     FirebaseAuth firebaseAuth;
@@ -46,7 +47,10 @@ public class DealerDashboard extends AppCompatActivity {
         DealerUserMainImage = findViewById(R.id.DealerUserImage);
         DealerMainUsername = (TextView) findViewById(R.id.DealerUsername);
         DealerMainEmail = (TextView) findViewById(R.id.DealerEmail);
+        //ids
         CreateAddInApp = findViewById(R.id.CreateAdd);
+        ApprovedAdds = findViewById(R.id.AddApproved);
+        FinanceForAdd = findViewById(R.id.ShowFinance);
         Logout = findViewById(R.id.DealerLogout);
 
         //Current user work
@@ -68,6 +72,23 @@ public class DealerDashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DealerDashboard.this,CreateAdd.class));
+                displayToast("Create Add");
+            }
+        });
+        //Approved Adds
+        ApprovedAdds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DealerDashboard.this,DealerApprovedAddShow.class));
+                displayToast("Approved Adds");
+            }
+        });
+        //Finance
+        FinanceForAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DealerDashboard.this,DealerFinance.class));
+                displayToast("Finance of adds");
             }
         });
     }
@@ -104,4 +125,7 @@ public class DealerDashboard extends AppCompatActivity {
         });
     }
 
+    private void displayToast(String s) {
+        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
+    }
 }
