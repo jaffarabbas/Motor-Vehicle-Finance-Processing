@@ -6,59 +6,78 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo_round"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AJIZAMOTORS.NoActionBar">
-        <activity android:name=".DealerFinance">
+        <activity android:name=".DealerFinance"
+            android:screenOrientation="portrait">
 
         </activity>
         <activity android:name=".DealerApprovedAddShow"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AJIZAMOTORS"
             >
 
         </activity>
-        <activity android:name=".FinanceTotalForAdmin">
+        <activity android:name=".FinanceTotalForAdmin"
+            android:screenOrientation="portrait">
 
         </activity>
         <activity
             android:name=".CompleteOrders"
-            android:theme="@style/Theme.AJIZAMOTORS" />
+            android:theme="@style/Theme.AJIZAMOTORS"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".CustomerCart"
-            android:theme="@style/Theme.AJIZAMOTORS" />
+            android:theme="@style/Theme.AJIZAMOTORS"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".CustomerAddReview"
-            android:theme="@style/Theme.AJIZAMOTORS" />
-        <activity android:name=".SplashScreen">
+            android:theme="@style/Theme.AJIZAMOTORS"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SplashScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DealerDashboard">
+        <activity android:name=".DealerDashboard"
+            android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".AdminDashboard" />
-        <activity android:name=".AdminRegister" />
+        <activity android:name=".AdminDashboard"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AdminRegister"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".AdminAddReviewer"
-            android:theme="@style/Theme.AJIZAMOTORS" >
+            android:theme="@style/Theme.AJIZAMOTORS"
+            android:screenOrientation="portrait">
 
         </activity>
         <activity
             android:name=".Dashboard"
             android:label="@string/title_activity_dashboard"
-            android:theme="@style/Theme.AJIZAMOTORS.NoActionBar" />
-        <activity android:name=".CreateAdd" />
-        <activity android:name=".AdminLogin" />
-        <activity android:name=".DealerRegister" />
-        <activity android:name=".DealerLogin" />
-        <activity android:name=".Regester" />
-        <activity android:name=".LoginPage" />
-        <activity android:name=".FirstPage" />
+            android:theme="@style/Theme.AJIZAMOTORS.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CreateAdd"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AdminLogin"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DealerRegister"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DealerLogin"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Regester"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LoginPage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".FirstPage"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"
