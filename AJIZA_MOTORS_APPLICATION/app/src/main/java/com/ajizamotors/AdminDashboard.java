@@ -111,7 +111,7 @@ public class AdminDashboard extends AppCompatActivity {
     private void signOut() {
         SharedPreferences GetSharedPreferences = getSharedPreferences("profile",MODE_PRIVATE);
         GetSharedPreferences.edit().clear().apply();
-        startActivity(new Intent(AdminDashboard.this,AdminLogin.class));
+        startActivity(new Intent(AdminDashboard.this,FirstPage.class));
         finish();
     }
 
