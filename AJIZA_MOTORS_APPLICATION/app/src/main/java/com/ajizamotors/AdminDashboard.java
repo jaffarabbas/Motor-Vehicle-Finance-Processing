@@ -41,7 +41,6 @@ public class AdminDashboard extends AppCompatActivity {
         AdminLogOut = findViewById(R.id.AdminLogout);
         //pages ids
         AddReview = findViewById(R.id.ReviewAdd);
-        Orders = findViewById(R.id.OrderView);
         CompleteOrders = findViewById(R.id.CompleteOrdersViewFromAdmin);
         Finance = findViewById(R.id.FinanceView);
 
@@ -54,13 +53,6 @@ public class AdminDashboard extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(AdminDashboard.this,AdminAddReviewer.class));
                 displayToast("Add Review");
-            }
-        });
-        //Orders view
-        this.Orders.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                displayToast("Orders");
             }
         });
         //Complete Orders
