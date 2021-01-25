@@ -45,7 +45,7 @@ public class CustomerCart extends AppCompatActivity {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                   System.out.println("helooooooooooooooooooooooooo"+snapshot.getChildrenCount());
+                   System.out.println(snapshot.getChildrenCount());
             }
 
             @Override
