@@ -52,6 +52,7 @@
         android:layout_marginRight="64dp"
         android:layout_marginBottom="252dp"
         android:background="@drawable/buttonbackground1"
+        android:shadowColor="@color/mainblack"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

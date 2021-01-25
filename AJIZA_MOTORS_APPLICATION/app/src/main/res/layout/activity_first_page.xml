@@ -4,28 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainbackground"
+    android:background="@drawable/firstpagebg"
     tools:context=".FirstPage">
+
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="288dp"
         android:layout_height="229dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="108dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intoadmin"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bgimage" />
-
 
     <Button
         android:id="@+id/intocustomer"
         android:layout_width="238dp"
         android:layout_height="75dp"
-        android:layout_marginTop="56dp"
-        android:text="GARRI CHAYIE"
+        android:layout_marginTop="16dp"
         android:background="@drawable/buttonbackground1"
+        android:text="OUR USERS"
+        android:textColor="@color/mainblack"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -34,27 +37,47 @@
         android:id="@+id/intodealer"
         android:layout_width="237dp"
         android:layout_height="77dp"
-        android:text="GARRI DENE HAI"
         android:background="@drawable/buttonbackground1"
+        android:text="DEALERS"
+        android:textStyle="bold"
+        android:textColor="@color/mainblack"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/intocustomer"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/intocustomer"
         app:layout_constraintTop_toBottomOf="@+id/intocustomer"
-        app:layout_constraintVertical_bias="0.356" />
+        app:layout_constraintVertical_bias="0.216" />
 
     <ImageButton
         android:id="@+id/intoadmin"
-        android:layout_width="72dp"
-        android:layout_height="64dp"
-        android:background="@drawable/admin_button"
+        android:layout_width="90dp"
+        android:layout_height="86dp"
+        android:background="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/intodealer"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/intodealer"
+        app:layout_constraintTop_toBottomOf="@+id/intodealer"
+        app:layout_constraintVertical_bias="0.615"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bungee"
+        android:text="AJIZA MOTORS"
+        android:textColor="@color/mainblack"
+        android:textSize="40dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="@drawable/admin_button"
-        tools:ignore="VectorDrawableCompat" />
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
