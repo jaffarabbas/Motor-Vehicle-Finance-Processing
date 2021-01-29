@@ -48,23 +48,9 @@
         android:background="@drawable/buttonbackground1"
         android:text="LOGIN"
         android:textColor="@color/mainblack"
-        app:layout_constraintBottom_toTopOf="@+id/NewAdmin"
         app:layout_constraintEnd_toEndOf="@+id/AdminPassword"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="@+id/AdminPassword"
-        app:layout_constraintTop_toBottomOf="@+id/AdminPassword"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/AdminPassword" />
 
-    <Button
-        android:id="@+id/NewAdmin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/cardview_shadow_end_color"
-        android:text="Add new Admin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.87"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
 </androidx.constraintlayout.widget.ConstraintLayout>
