@@ -37,7 +37,6 @@ public class AdminLogin extends AppCompatActivity {
 
         AdminUserName = findViewById(R.id.AdminUserName);
         AdminPassword = findViewById(R.id.AdminPassword);
-        newAdmin = findViewById(R.id.NewAdmin);
         AdminLoginButton = findViewById(R.id.AdminLogin);
         databaseReference = firebaseDatabase.getReference().child("AdminDatabase");
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -78,13 +77,6 @@ public class AdminLogin extends AppCompatActivity {
                 }else{
                     UserLogin(name,password);
                 }
-            }
-        });
-
-        newAdmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AdminLogin.this,AdminRegister.class));
             }
         });
     }
