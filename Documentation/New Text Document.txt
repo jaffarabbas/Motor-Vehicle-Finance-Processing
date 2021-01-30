@@ -1,0 +1,21 @@
+******ADMIN*******
+
+admin : admin
+password : 123456
+
+
+******CUSTOMER******
+
+EMAIL : gamaportal8@gmail.com  
+PASSWORD : 123456
+we use firebase authentication there is a button of of google sign in so you can sgin in from there 
+
+
+******DEALER*******
+
+EMAIL : imad@gmail.com 
+PASSWORD : 123456
+
+we use firebase authentication there is a button of of google sign in so you can sgin in from there 
+
+
